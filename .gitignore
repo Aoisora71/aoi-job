@@ -7,7 +7,6 @@ __pycache__/
 build/
 develop-eggs/
 dist/
-downloads/
 eggs/
 .eggs/
 lib/
@@ -95,8 +94,6 @@ node_modules/
 *.rar
 
 # Archive files (if you want to ignore them)
-backend.zip
-frontend.zip
 
 # ChromeDriver / Selenium
 chromedriver
@@ -116,24 +113,5 @@ geckodriver
 .Spotlight-V100
 .Trashes
 ehthumbs.db
-Thumbs.db
-Desktop.ini
 
-# IDE - VSCode
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
-*.code-workspace
 
-# IDE - JetBrains
-.idea/
-*.iml
-*.iws
-*.ipr
-
-# Package manager lock files (optional - uncomment if you want to ignore them)
-# package-lock.json
-# yarn.lock
-# pnpm-lock.yaml
