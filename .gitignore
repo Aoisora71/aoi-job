@@ -9,8 +9,9 @@ develop-eggs/
 dist/
 eggs/
 .eggs/
-lib/
-lib64/
+# Python lib directories (venv-specific, already covered by venv/ ignore)
+# lib/
+# lib64/
 parts/
 sdist/
 var/
@@ -76,6 +77,7 @@ node_modules/
 # Next.js
 /.next/
 /out/
+.next/
 # Note: next-env.d.ts should be committed (it's needed for TypeScript)
 
 # Production
