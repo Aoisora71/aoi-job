@@ -24,6 +24,8 @@ import { formatTimeAgo } from '@/utils/timeFormat'
 import BidContent from './BidContent'
 import { apiClient } from '../lib/api'
 
+const DEFAULT_AVATAR = 'https://cw-assets.crowdworks.jp/packs/2025-09/1/legacy/images/user_picture/default/70x70-0cec756ba3af339dd157.png'
+
 interface JobCardProps {
   job: {
     id: string
@@ -337,7 +339,7 @@ const JobCard = memo(function JobCard({
       <div className="flex items-start justify-between mb-4">
         <div className="flex-1">
           <div className="flex items-center space-x-3 mb-2">
-            <div className='items-center relative'>
+            <div className='flex items-center relative'>
             {job.employer_id ? (
               <a
                 href={`https://crowdworks.jp/public/employers/${job.employer_id}`}
@@ -347,21 +349,21 @@ const JobCard = memo(function JobCard({
                 title={`View ${job.client_display_name || job.client}'s profile`}
               >
                 <img 
-                  src={job.avatar} 
+                  src={job.avatar || DEFAULT_AVATAR} 
                   alt={job.client}
                   className="w-12 h-12 rounded-full border-2 border-gray-200"
                   onError={(e) => {
-                    e.currentTarget.src = 'https://cw-assets.crowdworks.jp/packs/2025-09/1/legacy/images/user_picture/default/70x70-0cec756ba3af339dd157.png'
+                    e.currentTarget.src = DEFAULT_AVATAR
                   }}
                 />
               </a>
             ) : (
               <img 
-                src={job.avatar} 
+                src={job.avatar || DEFAULT_AVATAR} 
                 alt={job.client}
                 className="w-12 h-12 rounded-full border-2 border-gray-200"
                 onError={(e) => {
-                  e.currentTarget.src = 'https://cw-assets.crowdworks.jp/packs/2025-09/1/legacy/images/user_picture/default/70x70-0cec756ba3af339dd157.png'
+                  e.currentTarget.src = DEFAULT_AVATAR
                 }}
               />
             )}
@@ -494,7 +496,7 @@ const JobCard = memo(function JobCard({
               </div>
             )}
           </div>
-          <div className="flex-10">
+          <div className="flex-1">
               <h3 className="text-lg font-semibold text-gray-800 px-3">
                 <a 
                   href={`https://crowdworks.jp/proposals/new?job_offer_id=${job.id}`}
